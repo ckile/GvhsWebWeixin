@@ -1,0 +1,18 @@
+﻿<div class="modal" tabindex="-1">
+    <div class="modal-form  bg-white" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>{{ vm.title }}</h4><small>{{ vm.message }}</small>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div id="datepicker-inline"><div></div></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary" ng-click="vm.ok()">确定</a>
+                <a role="button" class="btn" ng-click="$hide()">关闭</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+{
+  "projects": [
+    "DAL",
+    "E:/GVS/GVHS/Gvhs.Web.Pms.Api/src",
+    "BLL",
+    "wrap",
+    "../Gvhs.Web.Pms.Api/src"
+  ]
+}

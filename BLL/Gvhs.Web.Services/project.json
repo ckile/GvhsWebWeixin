@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0-*",
+  "description": "Gvhs.Web.Services Class Library",
+  "authors": [ "lnw" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "frameworks": {
+    "net451": { },
+    "dnx451": {
+      "dependencies": {
+        "EntityFramework.Commands": "7.0.0-rc1-final"
+      }
+
+    }
+  },
+  "dependencies": {
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-final",
+    "EntityFramework.Core": "7.0.0-rc1-final",
+    "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+    "Gvhs.Web.DataContracts": "1.0.0-*",
+    "Gvhs.Web.ServiceContracts": "1.0.0-*"
+  },
+  "commands": {
+    "ef": "EntityFramework.Commands"
+  }
+}

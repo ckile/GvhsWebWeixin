@@ -1,0 +1,172 @@
+﻿<div ng-controller="bookingController as vm">
+    @*认证手机号*@
+    <div class="widget bg-white" ng-hide="vm.step != 1">
+        <ul class="media-list media-list-with-divider">
+            <li class="media media-sm">
+                <h5>姓名</h5>
+                <input type="text" class="form-control" ng-model="vm.Name" placeholder="姓名" />
+            </li>
+            <li class="media media-sm">
+                <h5>手机号</h5>
+                <input type="text" class="form-control" ng-model="vm.Mobile" placeholder="手机号" />
+            </li>
+            <li class="media media-sm">
+                <h5>验证码</h5>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" ng-model="vm.VerifyCode" placeholder="验证码" />
+                </div>
+                <div class="col-xs-6">
+                    <a href="javascript:;" id="btnSendCode" class="btn btn-primary center-block" ng-click="vm.getVerifyCode(vm.Mobile)" onclick="settime(this)">免费获取验证码</a>
+                </div>
+            </li>
+            <li class="media media-sm">
+                <a href="javascript:;" class="btn btn-primary center-block" ng-click="vm.dateQuery()"><h5 class="text-white">下一步</h5></a>
+            </li>
+            @*<li class="media media-sm">
+                    <a href="javascript:;" class="btn btn-primary center-block" ng-click="vm.dateQuery()"><h5 class="text-white">跳过认证</h5></a>
+                </li>*@
+        </ul>
+    </div>
+    @* 日期选择 *@
+    <div class="widget bg-white" ng-hide="vm.step != 2 ">
+        <ul class="media-list media-list-with-divider">
+            <li class="media media-sm">
+                <div class="text-center">
+                    <h4><a class="btn btn-default btn-icon btn-circle btn-lg" ng-click="vm.addArrival(-1)"><i class="fa fa-angle-left"></i></a>&nbsp;&nbsp;&nbsp;&nbsp; {{ vm.arrival.mon }}月{{ vm.arrival.day }}日 &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-default btn-icon btn-circle btn-lg" ng-click="vm.addArrival(1)"><i class="fa fa-angle-right"></i></a></h4>
+                    <h5 class="text-center">周{{ vm.arrival.week }}入住</h5>
+                </div>
+            </li>
+            <li class="media media-sm">
+                <div class="text-center">
+                    <h4><a class="btn btn-danger btn-icon btn-circle btn-lg" ng-click="vm.addDeparture(-1)"><i class="fa fa-minus"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;入住{{ vm.departure.days }}晚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-success btn-icon btn-circle btn-lg" ng-click="vm.addDeparture(1)"><i class="fa fa-plus"></i></a></h4>
+                    <h5>将于{{ vm.departure.mon }}月{{ vm.departure.day }}日退房</h5>
+                </div>
+            </li>
+            <li class="media media-sm">
+                <a href="javascript:;" class="btn btn-primary center-block" ng-click="vm.roomQuery()"><h5 class="text-white">选  房</h5></a>
+            </li>
+        </ul>
+    </div>
+
+    @* 房型选择 *@
+    <div class="widget bg-white" ng-hide="vm.step != 3 ">
+        <ul class="media-list media-list-with-divider">
+            <li class="media media-sm" ng-repeat="item in vm.roomtypes">
+                <a class="media-left" href="javascript:;">
+                    <img class="media-object rounded-corner" src="~/weixinsrc/img/pattern-cover.png" />
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        {{:: item.Description }}
+                    </h4>
+                    <a class="btn btn-danger pull-right" ng-click="vm.booking(item)">预订</a>
+                    <h4 class="text-warning">￥ {{:: item.Rate }}</h4>
+                    <p class="hidden-xs small text-success">
+                        {{:: item.Remark }}
+                    </p>
+                </div>
+            </li>
+            <li class="media media-sm">
+                <a href="javascript:;" class="btn  center-block" ng-click="vm.backQuery()"><h5>重新查询</h5></a>
+            </li>
+        </ul>
+    </div>
+
+    @* 订单确认 *@
+    <div class="widget bg-white" ng-hide="vm.step != 4 ">
+        <ul class="media-list media-list-with-divider">
+            @*<li class="media media-sm">
+                    <h5>住客姓名</h5>
+                    <p class="text-success pull-right">{{ vm.item.name }}</p>
+                </li>*@
+            <li class="media media-sm">
+                <h5>入住日期</h5>
+                <p class="text-success text-right">{{ vm.item.Arrival | date: 'yyyy-MM-dd' }} 至 {{ vm.item.Departure | date: 'MM-dd' }}</p>
+                <p class="text-success text-right">入住{{ vm.departure.days }}晚</p>
+            </li>
+
+            <li class="media media-sm">
+                <h5>房间类型</h5>
+                <p class="text-success text-right">{{ vm.item.RoomType.Description }}</p>
+                <h4 class="text-warning text-right">￥ {{ vm.item.RoomType.Rate }}</h4>
+            </li>
+            <li class="media media-sm">
+                <h5>附注</h5>
+                <input type="text" class="form-control" ng-model="vm.item.Remark" placeholder="给我们留言" />
+            </li>
+
+
+            <li class="media media-sm">
+                <a id="subimt-resv" href="javascript:;" class="btn btn-success center-block" ng-click="vm.subimtResv()"><h5 class="text-white"><i class="fa fa-check-circle"></i> 确认预订</h5></a>
+            </li>
+        </ul>
+    </div>
+
+    @* 订单完成 *@
+    <div class="widget bg-white" ng-hide="vm.step != 5 ">
+        <ul class="media-list media-list-with-divider">
+            <li class="media media-sm">
+                <h4 class="text-center"><span class="fa fa-check-circle fa-lg"></span> 订单已确认!</h4>
+                <h5 class="text-center text-success">前台编号: {{ vm.resvnum }}</h5>
+            </li>
+            <li class="media media-sm">
+                <a id="subimt-resv" href="javascript:;" class="btn btn-primary center-block" ng-click="vm.bookingNext()"><h5 class="text-white"> 继续预订 </h5></a>
+            </li>
+            <li class="media media-sm">
+                <a id="subimt-resv" href="javascript:;" class="btn btn-warning center-block" ng-click="vm.checkIn()"><h5 class="text-white"> 自助入住 </h5></a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="selectDateModal" class="modal" tabindex="-1">
+        <div class="modal-form  bg-white" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>{{ vm.selectDateTitle }}</h4>
+                </div>
+                <div class="modal-header">
+                    <div class="btn-group" ng-if="vm.selectDateTitle == '入住日期'">
+                        <a class="btn btn-default">今天</a>
+                        <a class="btn btn-default">明天</a>
+                        <a class="btn btn-default">后天</a>
+                    </div>
+                    <div class="btn-group" ng-if="vm.selectDateTitle != '入住日期'">
+                        <a class="btn btn-default">1天</a>
+                        <a class="btn btn-default">2天</a>
+                        <a class="btn btn-default">3天</a>
+                        <a class="btn btn-default">4天</a>
+                    </div>
+                    <a class="btn btn-primary pull-right" ng-click="vm.selectedDate()">确定</a>
+                </div>
+                <div class="modal-body">
+                    <div class="center-block">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    var countdown = 60;
+    function settime(obj) {
+        if (countdown == 0) {
+            obj.removeAttribute("disabled");
+            obj.innerText = "免费获取验证码";
+            countdown = 60;
+            return;
+        } else {
+            obj.setAttribute("disabled", true);
+            obj.innerText = "重新发送(" + countdown + ")";
+            countdown--;
+        }
+        setTimeout(function () {
+            settime(obj)
+        }
+            , 1000)
+    }
+
+</script>

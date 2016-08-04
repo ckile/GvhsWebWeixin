@@ -1,0 +1,24 @@
+﻿<div ng-controller="roomviewController as vm">
+    <form class="navbar-form full-width">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter keyword" ng-model="searchText"/>
+            <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+        </div>
+    </form>
+    <div class="col-xs-6" ng-repeat="item in vm.roomviews | filter:searchText" ng-click="vm.roomviewchild(item.RmNum)">       
+        <div class="widget widgetheight" ng-class="{
+             'bg-white': item.RmStus == 'V',
+             'bg-blue': item.RmStus == 'O',
+             'bg-red' : item.RmStus == 'U'
+        }">
+            <ul class="media-list media-list-with-divider">
+                <li class="media media-sm">                   
+                    <h4 class="media-heading text-center">{{item.RmNum}}</h4>
+                    <p class="media-heading text-center color2">{{item.Name}}</p>
+                    <p class="media-heading text-center color2">{{item.RmType}}</p>
+                    <p class="media-heading text-center color2">{{item.Rate}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

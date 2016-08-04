@@ -1,0 +1,47 @@
+﻿<div id="header" class="header navbar navbar-default navbar-fixed-top" ng-controller="headerController as vm">
+
+    <ul class="nav navbar-nav navbar-right">
+        @*<li>
+            <a class="blue" ng-click="vm.tipClick()">
+                <i class="icon icon-bulb"></i>
+            </a>
+        </li>*@
+        <li>
+            <a ui-sref="app.home"
+               ng-hide="$state.current.name === 'app.home'">
+                <i class="icon icon-home success"></i>
+            </a>
+        </li>
+    </ul>
+
+    @*<div class="navbar-header">
+        <a class="navbar-brand" ng-click="vm.hotelNameClick()">{{ vm.hotelName }}</a>
+
+    </div>*@
+    <div class="navbar-header">
+        <ul class="nav navbar-nav" >
+            <li class="navbar-user">
+                <a href="javascript:;" ng-click="vm.userNameClick()">
+                    <img src="{{ vm.headImgUrl }}" alt="" />
+                    {{ vm.userName }}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <ul class="nav navbar-nav pull-right">
+        <li class="navbar-user" ng-if="vm.roomCode != null">
+            <a href="javascript:;" ng-click="vm.roomCodeClick()">
+                <i class="icon icon-tag"></i> {{:: vm.roomCode }}
+            </a>
+        </li>
+    </ul>
+
+    @*<ul class="nav navbar-nav" >
+        <li class="navbar-user">
+            <a href="javascript:;" ng-click="vm.userNameClick()">
+                <img src="{{ vm.headImgUrl }}" alt="" />
+                {{ vm.userName }}
+            </a>
+        </li>
+    </ul>*@
+</div>

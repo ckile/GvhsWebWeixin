@@ -1,0 +1,22 @@
+{
+  "ambientDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160328125810",
+    "angular-animate": "registry:dt/angular-animate#1.5.0+20160407085121",
+    "angular-resource": "registry:dt/angular-resource#1.5.0+20160412142209",
+    "angular-strap": "registry:dt/angular-strap#2.2.0+20160317120654",
+    "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160317120654",
+    "bootstrap": "registry:dt/bootstrap#3.3.5+20160316155526",
+    "bootstrap.datepicker": "registry:dt/bootstrap.datepicker#0.0.0+20160316155526",
+    "es6-promise": "registry:dt/es6-promise#0.0.0+20160317120654",
+    "jquery": "registry:dt/jquery#1.10.0+20160316155526",
+    "jquery.cookie": "registry:dt/jquery.cookie#1.4.1+20160316155526",
+    "jquery.slimscroll": "registry:dt/jquery.slimscroll#1.3.3+20160316155526",
+    "jqueryui": "registry:dt/jqueryui#1.9.0+20160317120654",
+    "moment": "registry:dt/moment#2.8.0+20160316155526",
+    "pace": "registry:dt/pace#0.7.5+20160211194424",
+    "toastr": "registry:dt/toastr#2.0.1+20160316155526"
+  },
+  "dependencies": {
+    "moment": "registry:npm/moment#2.10.5+20160211003958"
+  }
+}

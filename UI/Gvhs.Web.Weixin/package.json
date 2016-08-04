@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "name": "gvhs.web.weixin",
+  "private": true,
+  "devDependencies": {
+    "webpack": "1.12.14",
+    "typescript": "1.8.9",
+    "ts-loader": "0.8.1",
+    "css-loader": "0.23.1",
+    "style-loader": "0.13.1",
+    "imports-loader": "0.6.5",
+    "less-loader": "2.2.3",
+    "img-loader": "1.2.2",
+    "typings": "0.7.12",
+    "less": "2.6.1"
+  },
+  "dependencies": {
+    "angular": "1.5.3",
+    "angular-motion": "0.4.4",
+    "angular-resource": "1.5.3",
+    "angular-route": "1.5.3",
+    "angular-strap": "2.3.8",
+    "angular-ui-router": "1.0.0-alpha.4",
+    "bootstrap": "^3.3.6",
+    "bootstrap-datepicker": "1.6.0",
+    "bootstrap-daterangepicker": "2.1.19",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "jquery": "^2.2.3",
+    "jqueryui": "1.11.1",
+    "moment": "2.12.0",
+    "oclazyload": "1.0.9",
+    "pace": "0.0.4",
+    "slimscroll": "0.9.1",
+    "toastr": "2.1.2"
+  }
+}

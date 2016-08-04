@@ -1,0 +1,24 @@
+﻿<!-- begin #header -->
+<div ng-include src="'@Url.Action("Header","Home")'"></div>
+<!-- end #header -->
+<!-- begin #content -->
+<div id="content" view-content class="content" ng-class="{
+    'content-full-width': setting.layout.pageContentFullWidth,
+    'height-full': setting.layout.pageContentFullHeight,
+    'content-inverse-mode': setting.layout.pageContentInverseMode
+}">
+    <div ui-view></div>
+</div>
+<!-- end #content -->
+
+<div ng-if="setting.layout.pageWithFooter === true">
+    <!-- begin #footer -->
+    <div id="footer" class="footer">
+        &copy; 广州金航信息科技有限公司
+    </div>
+    <!-- end #footer -->
+</div>
+
+<!-- begin scroll to top btn -->
+<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+<!-- end scroll to top btn -->

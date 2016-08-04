@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0-*",
+  "description": "Gvhs.Web.ServiceContracts Class Library",
+  "authors": [ "lnw" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "net451": { }
+  },
+  "dependencies": {
+    "EntityFramework.Core": "7.0.0-rc1-final"
+  }
+}

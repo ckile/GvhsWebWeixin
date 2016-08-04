@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0-*",
+  "description": "Gvhs.Web.Pms Class Library",
+  "authors": [ "lnw" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "net451": {
+      "frameworkAssemblies": {
+        "System.Net.Http": "4.0.0.0"
+      }
+    }
+  },
+  "dependencies": {
+    "Gvhs.Web.DataContracts": "1.0.0-*",
+    "Gvhs.Web.Pms.DataContracts": "1.0.0-*"
+  }
+}

@@ -1,0 +1,50 @@
+﻿<div ng-controller="cancelController as vm">
+    <form class="navbar-form full-width">
+        <div class="form-group">
+            <h2>取消订单</h2>
+        </div>
+        <div class="alert alert-info" role="alert">
+            <ul>
+                <li>是否取消此预订？</li>
+            </ul>
+        </div>
+    </form>
+    <div class="widget bg-white">
+        <ul class="media-list media-list-with-divider">
+            <li class="media media-sm">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">入离日期</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static lead color1">{{vm.arrDt}} 至{{vm.dptDt}} </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">房间类型</label>
+                    <div class="col-sm-5">
+                        <p class="lead form-control-static color1">{{vm.rmType}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">房价(￥)</label>
+                    <div class="col-sm-5">
+                        <p class="lead form-control-static color1">{{vm.rate}}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">取消原因</label>
+                    <div class="col-sm-5">
+                        <textarea class="form-control" ng-model="vm.Remark" placeholder="取消原因" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-success btn-lg" ng-click="vm.cancel()">确认</button>
+                        <a href="javascript::" class="btn btn-default btn-lg" role="button" ng-click="vm.back()">返回</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

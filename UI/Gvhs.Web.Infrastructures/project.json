@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0-*",
+  "description": "Gvhs.Web.Infrastructures Class Library",
+  "authors": [ "lnw" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "frameworks": {
+    "net451": { }
+  },
+  "dependencies": {
+    "Gvhs.Web.DataContracts": "1.0.0-*",
+    "Gvhs.Web.ServiceContracts": "1.0.0-*",
+    "Gvhs.Web.Services": "1.0.0-*",
+    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
+  }
+}

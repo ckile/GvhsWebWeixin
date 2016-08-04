@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0-*",
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
+    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
+    "EntityFramework.Core": "7.0.0-rc1-final",
+    "Gvhs.Web.DataContracts": "1.0.0-*",
+    "Gvhs.Web.Infrastructures": "1.0.0-*",
+    "Gvhs.Web.ServiceContracts": "1.0.0-*",
+    "Gvhs.Web.Services": "1.0.0-*",
+    "Microsoft.AspNet.Authentication.Cookies": "1.0.0-rc1-final",
+    "Gvhs.Web.Pms": "1.0.0-*",
+    "Gvhs.Web.Pms.DataContracts": "1.0.0-*"
+  },
+
+  "commands": {
+    "web": "Microsoft.AspNet.Server.Kestrel   --server.urls http://localhost:5000"
+  },
+
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {
+        "Gvhs.Web.Weixin.Infrastructures": "1.0.0-*"
+      }
+    }
+  },
+
+  "exclude": [
+    "wwwroot",
+    "node_modules"
+  ],
+  "publishExclude": [
+    "**.user",
+    "**.vspscc"
+  ]
+}

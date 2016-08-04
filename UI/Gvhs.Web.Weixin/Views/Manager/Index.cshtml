@@ -1,0 +1,33 @@
+﻿<div ng-controller="managerController as vm">
+    <div class="widget bg-white">
+        <ul class="media-list media-list-with-divider">
+            <li class="media media-sm">
+                <div class="text-center">
+                    <h6>出租率</h6>
+                </div>
+                <h2 class="text-center color1">{{vm.occupancyRate}}<small>%</small></h2>
+            </li>
+            <li class="media media-sm">
+                <div class="text-center">
+                    <h6>平均房价</h6>
+                </div>
+                <h2 class="text-center color1"><small>￥</small>{{vm.averageRoomRate}}</h2>
+            </li>
+            <li class="media media-sm">
+                <div class="text-center">
+                    <h6>预计收入</h6>
+                </div>
+                <h2 class="text-center color1"><small>￥</small>{{vm.expectedRevenue}}</h2>
+            </li>
+            <li class="media media-sm">
+                <a href="javascript:;" class="btn btn-primary center-block" ng-click="vm.roomView()"><h5 class="text-white">房态图</h5></a>
+            </li>
+            <li class="media media-sm">
+                <a href="javascript:;" class="btn btn-primary center-block" ng-click="vm.realtimeStatistic()"><h5 class="text-white">实时统计</h5></a>
+            </li>
+            <li class="media media-sm">
+                <a href="javascript:;" class="btn btn-primary center-block" ng-click="vm.operationAnalysis()"><h5 class="text-white">经营分析</h5></a>
+            </li>
+        </ul>
+    </div>
+</div>
